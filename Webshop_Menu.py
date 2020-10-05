@@ -7,31 +7,8 @@ import time
 import sys
 
 
-#def Main_menu():
-#    print("****MAIN MENU****")
-#    #time.sleep(1)
-#    print()
-#                        #Nedenunder defineres main menuen, selve teksten#
-#    choice = input("""
-#                      A: View Table
-#                      B: Update Table
-#                      Q: Quit/Log Out
-#
-#                      Enter your choice: """)
-#        #Nedenunder defineres de forskellige valg i menuen#
-#    if choice == "A" or choice =="a":
-#        select_product()
-#    elif choice == "B" or choice =="b":
-#        update.stock()
-#    elif choice=="Q" or choice=="q":
-#        sys.exit
-#    else:
-#        print("You must only select either A,B or Q.")
-#        print("Please try again")
-#        menu()
-
 def menu():
-    print("***MAIN MENU***")
+    print("****MAIN MENU****")
     time.sleep(1)
 
     choice = input(TextMenuFunctions.Main_menu_options())
@@ -73,7 +50,7 @@ def menu():
                 parameter = TextMenuFunctions.Product_select_parameter()
                 instance = ProductClass(parameter,'ProductName',20,'QuantityInStock',100,'BuyPrice',2000)
                 row = instance.Product_sql_select()
-                print (row)
+                print(row)
 
             elif Table_option == "Q" or Table_option =="q":
                 menu()
@@ -104,9 +81,35 @@ def menu():
                 print("Following has been updated: OrderDetails: {} QuantityOrdered: {} PriceEach: {}".format(parameters[0], parameters[1], parameters[2]))
                 time.sleep(1)
 
-
-
         elif Table == "Q" or Table =="a":
             menu()
     elif choice == "A" or choice =="q":
         sys.exit()
+
+
+
+
+    ## Tidligere Main menu, men redefineret da jeg ikke ville
+
+#def Main_menu():
+#    print("****MAIN MENU****")
+#    #time.sleep(1)
+#    print()
+#                        #Nedenunder defineres main menuen, selve teksten#
+#    choice = input("""
+#                      A: View Table
+#                      B: Update Table
+#                      Q: Quit/Log Out
+#
+#                      Enter your choice: """)
+#        #Nedenunder defineres de forskellige valg i menuen#
+#    if choice == "A" or choice =="a":
+#        select_product()
+#    elif choice == "B" or choice =="b":
+#        update.stock()
+#    elif choice=="Q" or choice=="q":
+#        sys.exit
+#    else:
+#        print("You must only select either A,B or Q.")
+#        print("Please try again")
+#        menu()

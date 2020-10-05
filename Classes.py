@@ -1,9 +1,9 @@
-from DatabaseObject import DatabaseObject
+from WebshopMain import DatabaseObject
 
 class ProductClass(DatabaseObject):
 
     def __init__(self, ProductCode, ProductName, ProductLine, ProductDescription, ProductVendor, BuyPrice, QuantityInStock):
-        database_Methods.__init__(self)
+        DatabaseObject.__init__(self)
         self.ProductCode = ProductCode
         self.ProductName = ProductName
         self.ProductLine = ProductLine
@@ -39,22 +39,22 @@ class ProductClass(DatabaseObject):
 
 class OrderDetailsClass(DatabaseObject):
 
-    def __init__(self, LocationID, QuantityOrdered, PriceEach):
-        database_Methods.__init__(self)
-        self.OrderDetails = OrderDetails
+    def __init__(self, OrderNumber, QuantityOrdered, PriceEach):
+        DatabaseObject.__init__(self)
+        self.OrderNumber = OrderNumber
         self.QuantityOrdered = QuantityOrdered
         self.PriceEach = PriceEach
 
     def OrderDetails_sql_insert(self):
-        sql = "INSERT INTO OrderDetails (OrderDetails,QuantityOrdered,PriceEach) Values (" + str(self.OrderDetails) + ", '" + str(self.QuantityOrdered) + "', " + str(self.PriceEach) + ")"
+        sql = "INSERT INTO OrderDetails (OrderNumber,QuantityOrdered,PriceEach) Values (" + str(self.OrderNumber) + ", '" + str(self.QuantityOrdered) + "', " + str(self.PriceEach) + ")"
         self.sql_query(sql, None)
 
     def OrderDetails_sql_update(self):
-        sql = "UPDATE OrderDetails SET OrderDetails =" + " " + str(self.OrderDetails) + ", " + "QuantityOrdered =" + " " + str(self.QuantityOrdered) + ", " + "PriceEach =" + " " + str(self.PriceEach) + "WHERE OrderDetails =" + " " + str(self.OrderDetails)
+        sql = "UPDATE OrderDetails SET OrderDetails =" + " " + str(self.OrderNumber) + ", " + "QuantityOrdered =" + " " + str(self.QuantityOrdered) + ", " + "PriceEach =" + " " + str(self.PriceEach) + "WHERE OrderDetails =" + " " + str(self.OrderNumber)
         self.sql_query(sql, None)
 
     def OrderDetails_sql_delete(self):
-        sql = "DELETE FROM OrderDetails WHERE OrderDetails =" + " " + str(self.OrderDetails)
+        sql = "DELETE FROM OrderDetails WHERE OrderDetails =" + " " + str(self.OrderNumber)
         self.sql_query(sql, None)
 
 #OrderDetails_sql_insert()
