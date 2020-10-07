@@ -1,7 +1,9 @@
 
-#Forbindelsen til SQL-databasen
-import pyodbc
+
+import pyodbc #Forbindelsen til SQL-databasen
 from tabulate import tabulate
+#Import af funktioner
+
 
 class DatabaseObject:
     def __init__(self):
@@ -10,7 +12,7 @@ class DatabaseObject:
                       'Server=THINOTE20-JPK;'
                       'Database=WebshopDB;'
                       'Trusted_Connection=yes;')
-        def show_table(self, table):
+    def show_table(self, table):
             self.cursor.execute("SELECT * FROM " + table)
             tabledescriptions = []
             tablerows = []
