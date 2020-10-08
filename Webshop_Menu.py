@@ -11,7 +11,7 @@ import sys
 
 #Her starter main menuen
 def menu():
-    print("****MAIN MENU****")
+    print("*MAIN MENU*")
     time.sleep(1)
 
     choice = input(TextMenuFunctions.main_menu_options())  #Her kommer Main menu options ind som er defineret i "TextMenuFunctions"
