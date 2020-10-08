@@ -6,7 +6,7 @@ from Classes import OrderDetailsClass
 import TextMenuFunctions
 import time
 import sys
-#Import af funktioner og indbyggede systemer
+#Import af funktioner og indbyggede indbyggede libaries.
 
 
 #Her starter main menuen
@@ -89,8 +89,7 @@ def menu():
     elif choice == "A" or choice =="q":
         sys.exit()
 
-
-
+menu()
 
     ## Tidligere Main menu, men redefineret da den
 
