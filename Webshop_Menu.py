@@ -42,7 +42,7 @@ def menu():
 
             elif Table_option == "C" or Table_option =="c": #Product Delete Menu
                 parameter = TextMenuFunctions.product_delete_parameter()
-                instance = ProductClass(parameter,'ProductName',20,'QuantityInStock',100,'BuyPrice',2000)
+                instance = ProductClass(parameter,'ProductName','RTX 3090','QuantityInStock',50,'BuyPrice', 11999)
                 instance.product_sql_delete()
                 time.sleep(1)
                 print("Following row has been deleted: {} ".format(parameter))
@@ -51,7 +51,7 @@ def menu():
 
             elif Table_option == "D" or Table_option =="d": #Product Show rows
                 parameter = TextMenuFunctions.product_select_parameter()
-                instance = ProductClass(parameter,'ProductName',20,'QuantityInStock',100,'BuyPrice',2000)
+                instance = ProductClass(parameter,'ProductName','RTX 3090','QuantityInStock',50,'BuyPrice',11999)
                 row = instance.product_sql_select()
                 print(row)
 
