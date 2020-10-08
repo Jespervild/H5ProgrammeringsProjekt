@@ -22,7 +22,7 @@ class DatabaseObject:
                 tabledescriptions.append(column[0])
         print(tabulate(tablerows, headers=tabledescriptions))
 
-    def sql_query(self, query, control):
+    def sql_query(self, query, control): #SQL overriding, som bliver brugt mange gange også.
         if control == None:
             self.cursor.execute(query)
             self.conn.commit()
@@ -33,6 +33,11 @@ class DatabaseObject:
 
     def print_object(self):
         print(self.conn.getinfo())
+
+
+
+
+
 
    # def select_product(self):
    #     self.cursor.execute('SELECT * FROM WebshopDB.dbo.Product')
